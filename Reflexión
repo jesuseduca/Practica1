@@ -1,0 +1,24 @@
+- ¿Qué ventajas y desventajas tiene la ejecución de programas de manera síncrona versus asíncrona?
+   Ventajas:
+    #Menos saturación en el, sistema ya que el programa no esta ejecutando ninguna mientras esta está activa
+    #No salta ningun error por ejecutar dos tareas incompatibles a la vez
+
+   Desventajas:
+    #Menor eficiencia ya que no se pueden ejecutar varios procesos a la vez
+    #Puede haber cuellos de botella ya que una aplicación muy larga frena la ejecución del programa entero
+
+- ¿Por qué es importante manejar las excepciones al trabajar con procesos?
+    Si no los controlamos, un error puede pararnos el programa cuando ese error no tendría por qué pararlo si este pudiese
+    seguir procesando ejecuciones.
+    A parte es importante controlar errores independientemente del programa
+
+- ¿Qué tipo de problemas se pueden presentar al comunicarse entre procesos? ¿Cómo los has solucionado?
+    Si dos procesos son asíncronos, debemos usar locks para que no accedan a la misma variable a la vez ya que podrían
+    cambiarsela el no al otro
+
+    A veces dos procesos pueden escribir información en la consola de comandos a la vez dando así información
+    incongruente o desorganizada, esto se puede solucionar mediante el uso de locks o usando sleeps para que uno espere
+    antes de seguir ejecutándose
+
+    Al ejecutarse dos procesos a la vez que usen la misma variable pueden sobreescribirse perdiendo asi alguno de los datos
+    que almacenan los mismos, esto tambien se puede solucionar con el so de locks
